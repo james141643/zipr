@@ -78,8 +78,20 @@ if (isset($_POST['shorten'])) {
 <!DOCTYPE html>
 <html>
 <head>
+<link rel='icon' href='favicon.ico' type='image/x-generic'/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #D9853B;
+   color: white;
+   text-align: center;
+   height:36px;
+   border: 1.2px solid #fff
+}
 body {
 	font: 1.12em Tahoma, sans-serif;
 	background-color: #558C89;
@@ -111,18 +123,29 @@ input[type="text"] {
 input[type="submit"] {
 	font-size: 15px;
 }
+p {
+    color: white;
+    text-align: center;
+    bottom:10px;
+    position:relative;
+}
 </style>
-<title>URL Shortener</title>
+<title>zipr.me URL Shortener</title>
 </head>
 <body>
 <div class="container">
 <center>
-	<h1>Shorten you links with zipr.me!</h1>
+	<h1>Shorten your links with zipr.me!</h1>
 	<form action="/" method="POST">
 	<input type="text" name="url_to_shorten" value="" placeholder="Enter a URL here">
 	<input type="submit" name="shorten" value="Shorten" />
 </center>
 </form>
 </div>
+
+<div class="footer">
+  <p>zipr.me© 2018</p>
+</div>
+
 </body>
 </html>

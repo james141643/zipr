@@ -52,16 +52,50 @@ if (isset($_POST['shorten'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<link type="text/css" rel="stylesheet" href="/css/global.css"/>
-	<title>URL Shortener</title>
+<style>
+body {
+	font: 1.12em Tahoma, sans-serif;
+	background-color: #558C89;
+	/*background-image: url("blah.jpg")*/
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+.container {
+	width:100%;
+	max-width:600px;
+	text-align:center;
+	margin:0 auto;
+	position:relative;
+	top:150px;
+}
+input {
+	padding:13px;
+	background-color:#fff;
+	border: 2px solid #D9853B;
+	margin:0;
+}
+
+input[type="text"] {
+	width:350px;
+	font-size: 15px;
+}
+input[type="submit"] {
+	font-size: 15px;
+}
+</style>
+<title>URL Shortener</title>
 </head>
 <body>
+<div class="container">
 <center>
-	<h1>Shorten you links with zipr.me</h1>
+	<h1>Shorten you links with zipr.me!</h1>
 	<form action="/" method="POST">
 	<input type="text" name="url_to_shorten" value="" placeholder="Enter a URL here">
 	<input type="submit" name="shorten" value="Shorten" />
 </center>
 </form>
+</div>
 </body>
 </html>

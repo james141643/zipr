@@ -1,3 +1,26 @@
+<style>
+.wrong {
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #D9853B;
+    border: 2.5px solid #ECECEA;
+    width: auto;
+    max-width: 350px;
+    text-align:center;
+    color: white;
+    position:relative;
+    top:100px;
+}
+.right {
+    margin: 0 auto;
+    width: auto;
+    max-width: 350px;
+    text-align:center;
+    color: white;
+    position:relative;
+    top:100px;
+}
+</style>
 <?php
 
 $db = new mysqli("localhost", "turtlejimmy", "coneyisland", "links141643");
@@ -44,7 +67,10 @@ if (isset($_POST['shorten'])) {
 	$result->bind_param("ss",$url, $title);
 	$result->execute();
 
-	echo "<center>Your shortened link: <br /> zipr.me/".$title."</center>";
+	//echo "<center>Your shortened link: <br /> zipr.me/".$title."</center>";
+	//echo "<div class=\"wrong\">Your shortened link: <br /> zipr.me/".$title."</div>";
+	//echo "<div class=\"right\">Your shortened link:</div><div class=\"wrong\">zipr.me/".$title."</div>";
+	echo "<div class=\"wrong\">zipr.me/".$title."</div>";
 
 }
 
@@ -52,6 +78,7 @@ if (isset($_POST['shorten'])) {
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
 	font: 1.12em Tahoma, sans-serif;
@@ -73,7 +100,7 @@ h1 {
 input {
 	padding:13px;
 	background-color:#fff;
-	border: 2px solid #D9853B;
+	border: 2.5px solid #D9853B;
 	margin:0;
 }
 

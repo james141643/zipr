@@ -89,8 +89,9 @@ if (isset($_POST['shorten'])) {
    background-color: #D9853B;
    color: white;
    text-align: center;
-   height:36px;
-   border: 1.2px solid #fff
+   height:34px;
+   border: 1.2px solid #fff;
+   font-size: 17px;
 }
 body {
 	font: 1.12em Tahoma, sans-serif;

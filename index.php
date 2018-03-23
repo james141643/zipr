@@ -1,15 +1,22 @@
 <style>
 .wrong {
-    margin: 0 auto;
-    padding: 5px;
-    background-color: #D9853B;
-    border: 2.5px solid #ECECEA;
-    width: auto;
-    max-width: 350px;
-    text-align:center;
+   // margin: 0 auto;
+   // padding: 5px;
+    //background-color: #D9853B;
+    //border: 2.5px solid #ECECEA;
+    //width: auto;
+   // max-width: 350px;
+   // text-align:center;
+    font-size: 25;
     color: white;
-    position:relative;
-    top:100px;
+   // position:relative;
+   // top:350px;
+   width:100%;
+	max-width:600px;
+	text-align:center;
+	margin:0 auto;
+	position:relative;
+	top:155px;
 }
 .right {
     margin: 0 auto;
@@ -70,7 +77,8 @@ if (isset($_POST['shorten'])) {
 	//echo "<center>Your shortened link: <br /> zipr.me/".$title."</center>";
 	//echo "<div class=\"wrong\">Your shortened link: <br /> zipr.me/".$title."</div>";
 	//echo "<div class=\"right\">Your shortened link:</div><div class=\"wrong\">zipr.me/".$title."</div>";
-	echo "<div class=\"wrong\">zipr.me/".$title."</div>";
+	//echo "<div class=\"wrong\">zipr.me/".$title."</div>";
+	print "<div class=\"wrong\">Click the Link to Copy!</div>";
 
 }
 
@@ -78,8 +86,8 @@ if (isset($_POST['shorten'])) {
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" href="favicon.ico" />
-<link rel="shortcut icon" href="favicon.ico" />
+<link rel="shortcut icon" href="http://www.zipr.me/favicon.ico" >
+<link rel="shortcut icon" href="favicon.ico" >
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .footer {
@@ -111,6 +119,18 @@ h1 {
 	position:relative;
 	top:150px;
 }
+.yo{
+    //position: fixed;
+   // top:400px;
+    //left: 50%;
+   // margin-left: -100px;
+      width:100%;
+	max-width:600px;
+	text-align:center;
+	margin:0 auto;
+	position:relative;
+	top:160px;
+}
 input {
 	padding:13px;
 	background-color:#fff;
@@ -122,8 +142,24 @@ input[type="text"] {
 	width:350px;
 	font-size: 15px;
 }
+input[type="yes"] {
+	width:200px;
+	font-size: 20px;
+	text-align:center;
+	cursor: pointer;
+	margin: 0 auto;
+	color: white;
+        padding: 2px;
+        background-color: #D9853B;
+        border: 2.5px solid #ECECEA;
+}
+#copyStatus {
+    color: white;
+    font-size: 15px;
+}
 input[type="submit"] {
 	font-size: 15px;
+	cursor: pointer;
 }
 p {
     color: white;
@@ -135,11 +171,29 @@ p {
 <title>Zipr | URL Shortener and Minimalist Link Management</title>
 </head>
 <body>
+<div class="yo">
+<input type="yes" readonly="readonly" value="zipr.me/<?php echo htmlspecialchars($title);?>" onclick="copyToClipboard(this);">
+	<div id="copyStatus" style="display: none;">Copied to Clipboard</div>
+
+	<script type="text/javascript">
+		function copyToClipboard(element) {
+			element.select();
+			if(document.execCommand('copy')) {
+				document.getElementById('copyStatus').style.display = '';
+				setTimeout(function() {
+					document.getElementById('copyStatus').style.display = 'none';
+				}, 800);
+			}
+		}
+	</script>
+</div>
+<br>
+<br>
 <div class="container">
 <center>
-	<h1>Shorten your links with zipr.me!</h1>
+	<h1>Shorten your links with <img src="/public_html/ziprlogo1.png" alt="zipr.me" width="768" height="509" align="middle"></h1>
 	<form action="/" method="POST">
-	<input type="text" name="url_to_shorten" value="" placeholder="Enter a URL here">
+	<input type="text" name="url_to_shorten" value="" placeholder="Enter URL here">
 	<input type="submit" name="shorten" value="Shorten" />
 </center>
 </form>
@@ -148,6 +202,5 @@ p {
 <div class="footer">
   <p>zipr.me© 2018</p>
 </div>
-
 </body>
 </html>

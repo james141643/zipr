@@ -78,8 +78,8 @@ if (isset($_POST['shorten'])) {
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" />
+<link rel="shortcut icon" href="favicon.ico" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .footer {
@@ -132,7 +132,7 @@ p {
     position:relative;
 }
 </style>
-<title>zipr.me URL Shortener</title>
+<title>Zipr | URL Shortener and Minimalist Link Management</title>
 </head>
 <body>
 <div class="container">
